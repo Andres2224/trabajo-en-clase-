@@ -1,0 +1,40 @@
+package PROYECTOS;
+
+public class parcial2 {
+
+	public static void main(String[] args) {
+		
+	
+        int fuerzasFaccionA = 1500;
+        int fuerzasFaccionB = 1300;
+
+        
+        int[] bajasFaccionA = {30 + 10 + 2, 60 + 60 + 3, 90 + 30}; 
+        int[] bajasFaccionB = {50 + 200 + 10, 90 + 180 + 5, 10 + 20 + 75}; 
+
+        fuerzasFaccionA -= calcularBajasTotales(bajasFaccionA);
+        fuerzasFaccionB -= calcularBajasTotales(bajasFaccionB);
+
+       
+        System.out.println("Total de fuerzas en combate:");
+        System.out.println("Facción A: " + fuerzasFaccionA);
+        System.out.println("Facción B: " + fuerzasFaccionB);
+        System.out.println();
+        System.out.println("Bajas totales:");
+        System.out.println("Infantería: " + sumarElementos(bajasFaccionA[0], bajasFaccionB[0]));
+        System.out.println("Caballería: " + sumarElementos(bajasFaccionA[1], bajasFaccionB[1]));
+        System.out.println("Caballería Pesada: " + sumarElementos(bajasFaccionA[2], bajasFaccionB[2]));
+    }
+
+    public static int calcularBajasTotales(int[] bajas) {
+        int total = 0;
+        for (int bajasTipo : bajas) {
+            total += bajasTipo;
+        }
+        return total;
+    }
+
+    public static int sumarElementos(int a, int b) {
+        return a + b;
+    }
+}
