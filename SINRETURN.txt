@@ -1,0 +1,14 @@
+package PROYECTOS;
+
+public class SINRETURN {
+	public static void HOLA() {
+		System.out.println("HOLANDRES");
+		
+	}
+
+	public static void main(String[] args) {
+		HOLA();
+		
+	}
+
+}

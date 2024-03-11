@@ -1,0 +1,17 @@
+package PROYECTOS;
+
+public class CONRETURN {
+
+	public static int suma(int n1, int n2) {
+		int resultado = n1 + n2;
+		return resultado;
+		
+	}
+	public static void main(String[] args) {
+		int operacion=suma(5,5);
+		System.out.println("El resultado de la operacion es: " + operacion);
+		
+		
+	}
+
+}
