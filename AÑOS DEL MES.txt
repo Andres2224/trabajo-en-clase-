@@ -1,0 +1,80 @@
+package PROYECTOS;
+
+import java.util.Scanner;
+
+public class AÑOSDELMES {
+	
+    public static boolean añobisiesto(int año) {
+        return (año % 4 == 0 && año % 100 != 0) || (año % 400 == 0);
+    }
+    
+    public static int obtenerDiasEnMes(int mes, int año) {
+        if (mes == 2) {
+            return añobisiesto(año) ? 29 : 28;
+        } else if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+            return 30;
+        } else {
+            return 31;
+        }
+    }
+    
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Ingrese el número del mes (1 al 12): ");
+		int mes = scanner.nextInt();
+
+		System.out.print("Ingrese el año: ");
+		int año = scanner.nextInt();
+
+		String nombreMes;
+		switch (mes) {
+		case 1:
+			nombreMes = "Enero";
+			break;
+		case 2:
+			nombreMes = "Febrero";
+			break;
+		case 3:
+			nombreMes = "Marzo";
+			break;
+		case 4:
+			nombreMes = "Abril";
+			break;
+		case 5:
+			nombreMes = "Mayo";
+			break;
+		case 6:
+			nombreMes = "Junio";
+			break;
+		case 7:
+			nombreMes = "Julio";
+			break;
+		case 8:
+			nombreMes = "Agosto";
+			break;
+		case 9:
+			nombreMes = "Septiembre";
+			break;
+		case 10:
+			nombreMes = "Octubre";
+			break;
+		case 11:
+			nombreMes = "Noviembre";
+			break;
+		default:
+			nombreMes = "Diciembre";
+		}
+
+		int dias = obtenerDiasEnMes(mes, año);
+
+		System.out.println("El mes de " + nombreMes + " tiene " + dias + " días.");
+
+		if (añobisiesto(año)) {
+			System.out.println("El año " + año + " es bisiesto.");
+		} else {
+			System.out.println("El año " + año + " no es bisiesto.");
+		}
+	}
+}
