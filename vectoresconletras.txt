@@ -1,0 +1,26 @@
+package PROYECTOS;
+
+import java.util.Scanner;
+
+public class vectoresconletras {
+
+	public static void main(String[] args) {
+		
+		String letras[] = new String[20];
+		Scanner leer = new Scanner(System.in);
+
+		for (int i = 0; i <letras.length; i++) {
+
+			System.out.print("\nIngrese un Número: ");
+			letras[i] = leer.nextLine();
+
+		}
+
+		System.out.print("\n");
+		for (int i = 0; i < letras.length; i++) {
+
+			System.out.print(" " + letras[i]);
+		}
+
+	}
+}

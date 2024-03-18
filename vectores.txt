@@ -1,0 +1,25 @@
+package PROYECTOS;
+
+import java.util.Scanner;
+
+public class vectores {
+
+	public static void main(String[] args) {
+		int numero[] = new int[20];
+		Scanner leer = new Scanner(System.in);
+
+		for (int i = 0; i < numero.length; i++) {
+
+			System.out.print("\nIngrese un Número: ");
+			numero[i] = leer.nextInt();
+
+		}
+
+		System.out.print("\n");
+		for (int i = 0; i < numero.length; i++) {
+
+			System.out.print(" " + numero[i]);
+		}
+
+	}
+}
