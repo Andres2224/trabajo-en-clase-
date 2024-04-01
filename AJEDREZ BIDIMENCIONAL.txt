@@ -1,0 +1,36 @@
+package PROYECTOS;
+import java.util.Scanner;
+public class AJEDREZBIDIMENCIONAL {
+
+	public static void main(String[] args) {
+		
+		String[][] tablero = {
+				{"T","C","A","Q","R","A","C","T"},
+				{"P","P","P","P","P","P","P","P"},
+				{" ","*"," ","*"," ","*"," ","*"},
+				{"*"," ","*"," ","*"," ","*"," "},
+				{" ","*"," ","*"," ","*"," ","*"},
+				{"*"," ","*"," ","*"," ","*"," "},
+				{"P","P","P","P","P","P","P","P"},
+				{"T","C","A","Q","R","A","C","T"},
+				
+		};
+		imprimirtablero(tablero);
+	}
+	public static void imprimirtablero(String[][] tablero) {
+		
+		int i = 0, j = 0;
+		
+	
+		for (i = 0; i < tablero.length; i++) {
+			for (j = 0; j < tablero.length; j++) {
+				System.out.print(tablero[i][j]);
+				System.out.print(" ");
+				
+			}
+			System.out.println();
+		}
+	}
+	
+		
+	}
