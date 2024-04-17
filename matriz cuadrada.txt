@@ -1,0 +1,73 @@
+package PROYECTOS;
+
+import java.util.Scanner;
+
+public class jorda {
+
+	public static void main(String[] args) {
+		 Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Ingrese el tamaño de la matriz cuadrada: ");
+	        int n = scanner.nextInt();
+
+	        double[][] matrix = new double[n][n + 1];
+
+	        System.out.println("Ingrese los elementos de la matriz fila por fila:");
+
+	        // Solicitar al usuario los elementos de la matriz
+	        for (int i = 0; i < n; i++) {
+	            for (int j = 0; j < n + 1; j++) {
+	                System.out.printf("Elemento (%d, %d): ", i + 1, j + 1);
+	                matrix[i][j] = scanner.nextDouble();
+	            }
+	        }
+
+	        // Imprimir la matriz original
+	        System.out.println("\nMatriz original:");
+	        printMatrix(matrix);
+
+	        // Aplicar el método de Gauss-Jordan
+	        for (int i = 0; i < n; i++) {
+	            if (matrix[i][i] == 0) {
+	                System.out.println("No se puede dividir por cero. El algoritmo ha fallado.");
+	                return;
+	            }
+
+	            for (int j = 0; j < n; j++) {
+	                if (i != j) {
+	                    double ratio = matrix[j][i] / matrix[i][i];
+
+	                    for (int k = 0; k < n + 1; k++) {
+	                        matrix[j][k] -= ratio * matrix[i][k];
+	                    }
+	                }
+	            }
+	        }
+
+	        // Normalizar la matriz
+	        for (int i = 0; i < n; i++) {
+	            double a = matrix[i][i];
+
+	            for (int j = 0; j < n + 1; j++) {
+	                matrix[i][j] /= a;
+	            }
+	        }
+
+	        // Imprimir la matriz resultante
+	        System.out.println("\nMatriz resultante:");
+	        printMatrix(matrix);
+
+	        scanner.close();
+	    }
+
+	    // Método para imprimir la matriz
+	    public static void printMatrix(double[][] matrix) {
+	        int n = matrix.length;
+	        for (int i = 0; i < n; i++) {
+	            for (int j = 0; j < n + 1; j++) {
+	                System.out.printf("%.2f\t", matrix[i][j]);
+	            }
+	            System.out.println();
+	        }
+	    }
+	}
